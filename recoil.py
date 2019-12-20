@@ -20,3 +20,12 @@ recoil = [
     (1071, 870),
     (1069, 896),
 ]
+
+count = 0
+while True:
+    x, y = win32api.GetCursorPos()
+    # print(x, y)
+    if win32api.GetAsyncKeyState(0xA2):
+        print('On')
+        count = 0
+    sleep(0.1)
