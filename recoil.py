@@ -28,4 +28,12 @@ while True:
     if win32api.GetAsyncKeyState(0xA2):
         print('On')
         count = 0
+        while mouse.is_pressed(button='left'):
+            print(recoil[count][0], recoil[count][1])
+            if count < len(recoil):
+                win32api.SetCursorPos((recoil[count][0], recoil[count][1]))
+                count = count + 1
+            else:
+                count = 0
+            sleep(0.1)
     sleep(0.1)
